@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Form from './components/Search/Form';
 import Header from './components/Header/Header';
-import Moment from 'react-moment';
+import moment from 'moment';
 
 const authkey = '7d88da97aa99493f902d17c0fe8eef8d';
 
@@ -31,11 +31,15 @@ class App extends Component {
       return {
         webUrl: article.web_url,
         headline: article.headline.main,
-        date: article.pub_date
+        date: article.pub_date,
+        id: article._id
       };
     });
     return normalizedData;
   };
+  
+
+
 
   render() {
     return (
@@ -46,19 +50,22 @@ class App extends Component {
         <thead>
           <tr>
             <th>Title</th>
-            <th>Link</th>
             <th>Date</th>
           </tr>
         </thead>
           <tbody>
             {this.state.articles.map(article => {
               return (
-                <tr>
-                  <td>{article.headline}</td>
+                <tr key={article.id}>
                   <td>
-                    <a href={article.webUrl}>Click </a>
+                    <a href={article.webUrl}>{article.headline} </a>
                   </td>
-                  <td> {moment(article.date).format("MM-DD-YYYY")}</td>
+                  <td> 
+                     {moment(article.date).format("MM/DD/YYYY")} 
+                  </td>
+                  <td>
+                     <button type="button" class="btn btn-large btn-block btn-default">Save</button>
+                  </td>
                 </tr>
               );
             })}

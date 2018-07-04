@@ -1,6 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+
+// Tell Mongoose to use ES6 promises.
+mongoose.Promise = Promise;
 // const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -16,10 +19,8 @@ if (process.env.NODE_ENV === "production") {
 // app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nytreact");
 
-var axios = require("axios");
-var cheerio = require("cheerio");
 
 
 // Start the API server
