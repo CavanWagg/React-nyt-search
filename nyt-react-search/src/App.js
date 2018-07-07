@@ -64,7 +64,7 @@ class App extends Component {
                      {moment(article.date).format("MM/DD/YYYY")} 
                   </td>
                   <td>
-                     <button type="button" class="btn btn-large btn-block btn-default">Save</button>
+                     <button type="button" className="btn btn-large btn-block btn-default">Save</button>
                   </td>
                 </tr>
               );
