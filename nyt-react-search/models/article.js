@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const articleSchema = new Schema({
-  webUrl:{type: String, require: true},
+  webUrl: {type: String, require: true},
   headline: {type: String, require: true},
   date: {type: Date},
   id: {type: String, require: true},

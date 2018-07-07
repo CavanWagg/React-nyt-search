@@ -3,6 +3,7 @@ import './App.css';
 import Form from './components/Search/Form';
 import Header from './components/Header/Header';
 import moment from 'moment';
+import API from './utils/API';
 
 const authkey = '7d88da97aa99493f902d17c0fe8eef8d';
 
@@ -37,10 +38,18 @@ class App extends Component {
     });
     return normalizedData;
   };
+
+  saveButton = (e, i) => {
+    e.preventDefault();
+  //  console.log(' you clicked it!');
+    API.saveArticle({
+        webUrl: this.state.articles[i].webUrl,
+        headline: this.state.articles[i].headline,
+        date: this.state.articles[i].date,
+        id: this.state.articles[i].id
+    })
+  }
   
-
-
-
   render() {
     return (
       <div>
@@ -54,7 +63,7 @@ class App extends Component {
           </tr>
         </thead>
           <tbody>
-            {this.state.articles.map(article => {
+            {this.state.articles.map((article, index) => {
               return (
                 <tr key={article.id}>
                   <td>
@@ -64,7 +73,7 @@ class App extends Component {
                      {moment(article.date).format("MM/DD/YYYY")} 
                   </td>
                   <td>
-                     <button type="button" className="btn btn-large btn-block btn-default">Save</button>
+                     <button type="button" onClick={(e)=>this.saveButton(e, index)} className="btn btn-large btn-block btn-default">Save</button>
                   </td>
                 </tr>
               );
