@@ -24,6 +24,14 @@ getSaved = () => {
     console.log('whoa', this.state.saved)
   })
 }
+
+deleteButton = (id) => {
+ console.log('id', id);
+  API.deleteArticle(id)
+    .catch(err => console.log(err))
+     .then(res => this.getSaved())
+  }
+
 render () {
   return (
     
@@ -48,7 +56,7 @@ render () {
                      {moment(article.date).format("MM/DD/YYYY")} 
                   </td>
                   <td>
-                     <button type="button" onClick={(e)=>this.saveButton(e, index)} className="btn btn-large btn-block btn-default">Save</button>
+                     <button type="button" onClick={(e)=>this.deleteButton(article._id)} className="btn btn-large btn-block btn-default">Delete</button>
                   </td>
                 </tr>
               );

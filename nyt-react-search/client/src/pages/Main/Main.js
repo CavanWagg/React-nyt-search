@@ -80,7 +80,7 @@ class Main extends Component {
                      {moment(article.date).format("MM/DD/YYYY")} 
                   </td>
                   <td>
-                     <button type="button" onClick={(e)=>this.saveButton(e, index)} className="btn btn-large btn-block btn-default">Save</button>
+                     <button id={article.id} type="button" onClick={(e)=>this.saveButton(e, index)} className="btn btn-large btn-block btn-default">Save</button>
                   </td>
                 </tr>
               );
