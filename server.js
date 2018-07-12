@@ -18,14 +18,13 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 // Add routes, both API and view
-app.use(routes);
+
 
 // Connect to the Mongo DB
-mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/nytreact");
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/nytreact");
+mongoose.connect(MONGODB_URI);
 
-
+app.use(routes);
 // Start the API server
 app.listen(PORT, function() {
   console.log(secrets);
