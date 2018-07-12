@@ -2,7 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const routes = require('./routes');
-import {getSecret} from './secrets';
+const secrets = require('./secrets');
+
 // Tell Mongoose to use ES6 promises.
 mongoose.Promise = Promise;
 // const routes = require("./routes");
@@ -20,12 +21,13 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect( getSecret('dbUri') || "mongodb://localhost/nytreact");
+mongoose.connect( secrets.dbUri || "mongodb://localhost/nytreact");
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 
 // Start the API server
 app.listen(PORT, function() {
+  console.log(secrets);
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
