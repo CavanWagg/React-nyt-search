@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect( secrets.dbUri || "mongodb://localhost/nytreact");
+mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/nytreact");
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
