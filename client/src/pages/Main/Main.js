@@ -45,7 +45,7 @@ class Main extends Component {
     return normalizedData;
   };
 
-  saveButton = (e, i) => {
+  saveButton = (e, i) => { 
     e.preventDefault();
   //  console.log(' you clicked it!');
     API.saveArticle({
