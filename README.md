@@ -1,6 +1,6 @@
 # NYT REACT APP
 
-Search for articles by accessing the New York Times Article Search API. Save articles for for later, and delete then from the database. 
+
 
 Deployed via Heroku with Mlab access it [here](https://mern-stack-nyt.herokuapp.com/)
 
