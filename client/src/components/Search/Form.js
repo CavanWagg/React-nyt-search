@@ -16,7 +16,7 @@ const Form = (props) => {
         </div>
         
         </div>
-        <button className="btn get-articles btn-info">Get Articles</button>
+        <button className="btn get-articles btn-info">GET ARTICLES</button>
         
       </form>
     );
