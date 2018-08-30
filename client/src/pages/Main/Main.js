@@ -6,6 +6,7 @@ import Header from '../../components/Header/Header';
 import moment from 'moment';
 import Saved from "../../components/Saved";
 import Nav from "../../components/Nav";
+import Footer from "../../components/Footer"
 
 
 const authkey = '7d88da97aa99493f902d17c0fe8eef8d';
@@ -58,11 +59,12 @@ class Main extends Component {
   
   render() {
     return (
-      <div>
+      <div className="">
          <Nav />
         <Header />
         <Form getNyt={this.getNyt} />
-        <table className="table table-striped">
+        <div>
+        <table id="articleTable" className="table table-striped">
         <thead>
           <tr>
             <th>Title</th>
@@ -87,8 +89,8 @@ class Main extends Component {
             })}
           </tbody>
         </table>
-        
-       
+        </div>
+        <Footer />
       </div>
      
     );

@@ -1,0 +1,6 @@
+@media (min-width: 576px) {
+  .form-group,
+  .get-articles {
+    margin-left: 1rem;
+  }
+}

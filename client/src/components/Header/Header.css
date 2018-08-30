@@ -1,7 +1,10 @@
-
 .page-header {
   width: 100%;
   text-align: center;
   background: lightgray;
-
+}
+@media (max-width: 576px) {
+  #app-title {
+    font-size: 2rem;
+  }
 }
