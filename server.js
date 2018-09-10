@@ -23,6 +23,7 @@ if (process.env.NODE_ENV === 'production') {
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/nytreact';
 mongoose.connect(MONGODB_URI);
 
+
 app.use(routes);
 // Start the API server
 app.listen(PORT, () => {

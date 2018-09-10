@@ -17,11 +17,9 @@ componentDidMount () {
 
 
 getSaved = () => {
-  console.log('anyone home?')
   API.getArticles()
   .then(res => {
     this.setState({saved: res.data})
-    console.log('whoa', this.state.saved)
   })
 }
 
