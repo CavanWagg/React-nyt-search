@@ -4,15 +4,15 @@ import "./Form.css";
 const Form = (props) => {
     return (
       <form onSubmit={props.getNyt}>
-        <div class="form-group ">
-        <div class="d-inline-block">
-        <input class="form-control" type="text" name="topic" placeholder="topic"/>
+        <div className="form-group ">
+        <div className="d-inline-block">
+        <input className="form-control" type="text" name="topic" placeholder="topic"/>
         </div>
-        <div class="d-inline-block">
-      <input class="form-control" type="text" name="startYear" placeholder="startYear"/>
+        <div className="d-inline-block">
+      <input className="form-control" type="text" name="startYear" placeholder="startYear"/>
       </div>
-      <div class="d-inline-block">
-        <input class="form-control" type="text" name="endYear" placeholder="endYear"/>
+      <div className="d-inline-block">
+        <input className="form-control" type="text" name="endYear" placeholder="endYear"/>
         </div>
         
         </div>
