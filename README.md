@@ -1,6 +1,6 @@
 # NYT REACT APP
 
-Deployed via Heroku with Mlab access it [here](https://mern-stack-nyt.herokuapp.com/)
+Deployed via Heroku with Mlab access it [here](https://reactjs-nyt-search.herokuapp.com/saved)
 
 *Homepage*
 
